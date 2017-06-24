@@ -11,12 +11,12 @@ const utils = require('../lib/index');
 describe('#createName', function() {
   describe('with no arguments', function() {
     // what should the module do?
-    it('should return a random name', function() {
+    it('should return a full name', function() {
       // run the module functionality
       var result = utils.createName();
 
       // test the result to the expected outcome
-      expect(result).to.equal('hi');
+      expect(result).to.match(/^(\w+)\s{1}(\w+)$/);
     });
   });
 });
