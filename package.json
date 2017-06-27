@@ -1,5 +1,5 @@
 {
-  "name": "utilsjs",
+  "name": "gimmejs",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dreamistlabs/utilsjs.git"
+    "url": "git+https://github.com/dreamistlabs/gimmejs.git"
   },
   "author": "Johnny Hu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dreamistlabs/utilsjs/issues"
+    "url": "https://github.com/dreamistlabs/gimmejs/issues"
   },
-  "homepage": "https://github.com/dreamistlabs/utilsjs#readme",
+  "homepage": "https://github.com/dreamistlabs/gimmejs#readme",
   "devDependencies": {
     "chai": "^4.0.2",
     "mocha": "^3.4.2"
