@@ -1,22 +1,16 @@
 'use strict';
 
-// require chai — assertion library
 const expect = require('chai').expect;
+const should = require('chai').should;
+const gimme = require('../lib/index');
 
-// require your module
-const utils = require('../lib/index');
-
-// use mocha
-// describe your module
-describe('#createName', function() {
+describe('#name', function() {
   describe('with no arguments', function() {
-    // what should the module do?
     it('should return a full name', function() {
-      // run the module functionality
-      var result = utils.createName();
+      var output = gimme.name();
 
       // test the result to the expected outcome
-      expect(result).to.match(/^(\w+)\s{1}(\w+)$/);
+      expect(output).to.match(/^(\w+)\s{1}(\w+)$/);
     });
   });
 });
