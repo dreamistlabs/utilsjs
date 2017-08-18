@@ -2,7 +2,7 @@
 
 const expect = require('chai').expect;
 const should = require('chai').should;
-const gimme = require('../lib/index');
+const gimme = require('../src/lib/index');
 
 describe('#name', function() {
   describe('with no arguments', function() {
