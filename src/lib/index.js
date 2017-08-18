@@ -1,6 +1,9 @@
 'use strict';
 
-const gimme = require('gimmejs-name');
+const gimme = {
+  currency: require('gimmejs-currency').currency,
+  name:     require('gimmejs-name').create
+};
 
 /**
  * State what the function does
@@ -11,7 +14,8 @@ const gimme = require('gimmejs-name');
 module.exports = (function() {
 
   return {
-    name: gimme.create
+    currency: gimme.currency,
+    name: gimme.name
   }
 
 })();
