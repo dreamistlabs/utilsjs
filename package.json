@@ -38,6 +38,7 @@
     "clean-webpack-plugin": "^1.0.1",
     "coveralls": "^2.13.1",
     "eslint": "^5.14.1",
+    "eslint-config-prettier": "^4.1.0",
     "istanbul": "^0.4.5",
     "lerna": "^3.13.0",
     "travis-ci": "^2.1.1",
