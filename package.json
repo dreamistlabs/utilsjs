@@ -3,9 +3,6 @@
   "version": "0.0.2",
   "description": "",
   "private": true,
-  "engines": {
-    "node": ">=4.2.4"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dreamistlabs/gimmejs.git"
