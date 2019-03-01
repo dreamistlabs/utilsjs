@@ -1,8 +1,8 @@
 {
   "name": "gimmejs",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "",
-  "main": "dist/lib/index.js",
+  "main": "dist/gimmejs.js",
   "engines": {
     "node": ">=4.2.4"
   },
@@ -10,6 +10,7 @@
     "access": "public"
   },
   "scripts": {
+    "build": "babel --root-mode upward src -d lib",
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,8 +24,8 @@
     "url": "https://github.com/dreamistlabs/gimmejs/issues"
   },
   "homepage": "https://github.com/dreamistlabs/gimmejs#readme",
-  "devDependencies": {},
   "dependencies": {
+    "@gimmejs/number": "^0.2.0",
     "gimmejs-currency": "^1.0.0",
     "gimmejs-name": "0.0.2"
   }

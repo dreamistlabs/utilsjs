@@ -6,32 +6,40 @@
   "engines": {
     "node": ">=4.2.4"
   },
-  "scripts": {
-    "build": "babel src --presets babel-preset-es2015 --out-dir dist",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
-    "prepublishOnly": "npm run build",
-    "test": "ava",
-    "test:watch": "ava --watch"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dreamistlabs/gimmejs.git"
   },
   "author": "Johnny Hu",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dreamistlabs/gimmejs/issues"
   },
   "homepage": "https://github.com/dreamistlabs/gimmejs#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
+    "prepublishOnly": "npm run build",
+    "test": "ava",
+    "test:watch": "ava --watch",
+    "watch": "webpack --config webpack.config.js -w"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.3",
-    "@babel/preset-env": "^7.3.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/plugin-transform-destructuring": "^7.3.2",
+    "@babel/preset-env": "^7.3.4",
     "ava": "^1.2.1",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^1.0.1",
     "coveralls": "^2.13.1",
     "istanbul": "^0.4.5",
     "lerna": "^3.13.0",
-    "travis-ci": "^2.1.1"
+    "travis-ci": "^2.1.1",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
   },
   "dependencies": {
     "gimmejs-currency": "^1.0.0",

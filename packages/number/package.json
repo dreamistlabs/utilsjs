@@ -1,0 +1,25 @@
+{
+  "name": "@gimmejs/number",
+  "version": "0.2.0",
+  "description": "Oh, you want a randomly generated number? Just say gimme!",
+  "main": "./dist/gimmejs-number.js",
+  "scripts": {
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- --require babel-register -R spec test/*",
+    "prepublishOnly": "npm run compile",
+    "test": "mocha --require babel-register --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamistlabs/gimmejs-number.git"
+  },
+  "author": "Johnny Hu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dreamistlabs/gimmejs-number/issues"
+  },
+  "homepage": "https://github.com/dreamistlabs/gimmejs-number#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "gimmejs-error": "0.0.1"
+  }
+}
