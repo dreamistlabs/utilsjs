@@ -1,7 +1,8 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const modules = ['error', 'gimmejs', 'number'];
 
-module.exports = ['gimmejs', 'number'].map(function(module) {
+module.exports = modules.map(function(module) {
   const modulePath = `./packages/${module}`;
   return {
     mode: 'production',
@@ -17,7 +18,7 @@ module.exports = ['gimmejs', 'number'].map(function(module) {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.(js)$/,
           loader: 'babel-loader',
         },
       ],
