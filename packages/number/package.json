@@ -5,7 +5,6 @@
   "main": "./dist/gimmejs-number.js",
   "scripts": {
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- --require babel-register -R spec test/*",
-    "prepublishOnly": "npm run compile",
     "test": "mocha --require babel-register --reporter spec"
   },
   "repository": {
@@ -18,8 +17,7 @@
     "url": "https://github.com/dreamistlabs/gimmejs-number/issues"
   },
   "homepage": "https://github.com/dreamistlabs/gimmejs-number#readme",
-  "devDependencies": {},
   "dependencies": {
-    "gimmejs-error": "0.0.1"
+    "@gimmejs/error": "^0.0.1"
   }
 }

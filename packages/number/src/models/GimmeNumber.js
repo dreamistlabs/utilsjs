@@ -1,9 +1,13 @@
-import GimmeError from 'gimmejs-error';
+import GimmeError from '@gimmejs/error';
 import { typeValidator } from '../helpers/validators';
 
 class GimmeNumber {
   constructor(digits = 1, formatted = false, decimal = false) {
-    [this._digits, this._formatted, this._decimal] = [digits, formatted, decimal];
+    [this._digits, this._formatted, this._decimal] = [
+      digits,
+      formatted,
+      decimal,
+    ];
 
     this.validate(this._digits, this._formatted, this._decimal);
   }

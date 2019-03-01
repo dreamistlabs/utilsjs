@@ -1,17 +1,14 @@
 {
-  "name": "gimmejs-error",
+  "name": "@gimmejs/error",
   "version": "0.0.1",
   "description": "A simple, custom Error class meant to be used in gimmeJS projects",
-  "main": "./lib/gimmejs-error.js",
+  "main": "./dist/gimmejs-error.js",
   "engines": {
     "node": ">=4.2.4"
   },
   "scripts": {
-    "compile": "babel src --out-dir lib --source-maps inline",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
-    "test": "mocha --reporter spec",
-    "prepublish": "npm run compile",
-    "watch": "babel src --out-dir lib -w"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",

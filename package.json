@@ -19,7 +19,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
-    "lerna:bootstrap": "lerna run bootstrap",
+    "lerna:bootstrap": "lerna bootstrap",
     "lerna:build": "lerna run build",
     "lerna:test": "lerna run test",
     "test": "ava",

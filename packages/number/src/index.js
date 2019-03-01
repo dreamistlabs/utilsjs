@@ -3,11 +3,11 @@
  * Generates a random number or a collection of random numbers.
  */
 
-import GimmeError from 'gimmejs-error';
 import GimmeNumber from './models/GimmeNumber';
 import { typeValidator } from './helpers/validators';
 
-const number = (digits, formatted, decimal) => new GimmeNumber(digits, formatted, decimal).output();
+const number = (digits, formatted, decimal) =>
+  new GimmeNumber(digits, formatted, decimal).output();
 
 const numbers = (quantity = 1, digits, formatted, decimal) => {
   typeValidator(quantity, 'number');
