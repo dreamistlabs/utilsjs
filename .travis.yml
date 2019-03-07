@@ -1,18 +1,34 @@
+sudo: false
+
 language: node_js
+
 node_js:
   - stable
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - npm update
+
 install:
   - npm install
 
 script:
-  - npm run cover
+  - npm test
 
 notifications:
   email:
     recipients:
-      - heyitsjhu@gmail.com
+      - johnny@dreamistlabs.com
     on_success: never
     on_failure: always
-    
+
 # Send coverage data to Coveralls
-after_script: "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
+after_script:
+  - npm run coveralls
