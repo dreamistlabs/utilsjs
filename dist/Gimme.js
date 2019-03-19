@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}var Gimme=function a(){_classCallCheck(this,a)},_default=Gimme;exports.default=_default;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9HaW1tZS5qcyJdLCJuYW1lcyI6WyJHaW1tZSJdLCJtYXBwaW5ncyI6IjBNQUFNQSxDQUFBQSxLLGdEQUVTQSxLIiwic291cmNlc0NvbnRlbnQiOlsiY2xhc3MgR2ltbWUge31cblxuZXhwb3J0IGRlZmF1bHQgR2ltbWU7XG4iXX0=

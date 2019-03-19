@@ -1,2 +1,3 @@
-export * from './Gimme';
-export * from './GimmeError';
+const Gimme = require('./Gimme').default;
+
+module.exports = Gimme;

@@ -1,3 +1,5 @@
-class Gimme {}
+import GimmeNumber from './models/GimmeNumber';
 
-export default Gimme;
+export default {
+  number: (digits, format, decimal) => new GimmeNumber(digits, format, decimal).result,
+};
