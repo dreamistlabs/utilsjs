@@ -5,29 +5,19 @@
   "keywords": [],
   "author": "Johnny Hu",
   "license": "MIT",
-  "main": "./dist/index.js",
+  "main": "./dist/gimme.node.js",
   "scripts": {
-    "build": "rm -rf dist/* && ./node_modules/.bin/babel src -d dist -s inline",
-    "build:dev": "./node_modules/.bin/babel src -d dist",
+    "build": "webpack",
     "coveralls": "npm run test:coverage -- --coverageReporters=text-lcov | coveralls",
     "prepublishOnly": "npm run build",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
-    "test": "jest",
+    "start": "webpack-dev-server --mode development --open",
+    "test": "jest --colors --verbose",
     "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch",
-    "watch": "npm-watch"
-  },
-  "watch": {
-    "build:dev": {
-      "patterns": [
-        "src"
-      ],
-      "extensions": "js",
-      "legacyWatch": true,
-      "runOnChangeOnly": true
-    }
+    "test:watch": "jest --colors --verbose --watch",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -50,35 +40,31 @@
       "jest-expect-message"
     ],
     "testMatch": [
-      "<rootDir>/(tests/*.test.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))"
+      "<rootDir>/__tests__/*.test.(js|ts)"
     ],
     "transform": {
-      "^.+\\.(js|jsx)?$": "babel-jest"
+      "^.+\\.js?$": "babel-jest"
     },
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/"
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
-    "@babel/plugin-transform-runtime": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
-    "babel-preset-minify": "^0.5.0",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
     "coveralls": "^3.0.3",
     "eslint": "^5.15.1",
     "generate-changelog": "^1.7.1",
+    "html-webpack-plugin": "^3.2.0",
     "jest": "^24.1.0",
     "jest-expect-message": "^1.0.2",
-    "npm-watch": "^0.6.0"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   },
-  "dependencies": {
-    "@babel/polyfill": "^7.2.5",
-    "@babel/runtime": "^7.3.4",
-    "gimmejs-currency": "^1.0.0",
-    "gimmejs-name": "0.0.2"
-  }
+  "dependencies": {}
 }

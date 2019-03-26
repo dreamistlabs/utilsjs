@@ -20,8 +20,7 @@ class GimmeNumber {
 
   /**
    * Get the random number. Checks optional parameters.
-   * @return {number} (if one or no arguments are passed to instance)
-   * @return {string} (if two or more arguments are passed to instance)
+   * @return { String } (if two or more arguments are passed to instance)
    */
   output() {
     let result = this.randomNumber(this._digits);
