@@ -4,8 +4,7 @@ import GimmeNumber from './models/GimmeNumber';
 
 export default {
   credit: opts => new GimmeCredit(opts).result,
-  name: (type, gender, salutation) =>
-    new GimmeName(type, gender, salutation).result,
+  ...GimmeName,
   number: (digits, format, decimal) =>
     new GimmeNumber(digits, format, decimal).result
 };

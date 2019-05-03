@@ -1,98 +1,47 @@
 import GimmeError from './GimmeError';
 import { typeValidator, NAMES_LIST } from '../utils';
 
-class GimmeName {
-  // TODO: FEATURES
-  // Should have option to choose to include salutation
-  // Should have option to choose to include suffix?
+// TODO: FEATURES
+// Should have option to choose to include salutation
+// Should have option to choose to include suffix?
 
-  /**
-   * Generate a random name.
-   * @param {string} type - The number of digits.
-   * @param {string} gender - Formats the number with commas (and decimals).
-   * @param {boolean} salutation - Include decimal places in number.
-   */
-  constructor(type = 'full', gender = 'male', salutation = false) {
-    [this._type, this._gender, this._salutation] = [type, gender, salutation];
-    // this.validate(this._digits, this._formatted, this._decimal);
-    this._result = this.generateRandomName();
+const LIST_OF_FIRST_NAMES = NAMES_LIST.FIRST_NAMES;
+const LIST_OF_LAST_NAMES = NAMES_LIST.LAST_NAMES;
+
+const TYPE_OPTIONS = ['full', 'first', 'last'];
+const GENDER_OPTIONS = ['male', 'female'];
+
+const randomIndexFrom = list => {
+  return Math.floor(Math.random() * list.length);
+};
+
+/**
+ * Creates a new randomly generated name.
+ * @class
+ * @param {string} type - Full, first, or last name.
+ * @param {string} gender - Male or female.
+ * @param {boolean} salutation - Male, female, or custom string.
+ */
+
+const GimmeName = (type = 'full', gender = 'male', salutation = false) => {
+  const firstNameOnly = type === 'first';
+  const lastNameOnly = type === 'last';
+
+  const firstName =
+    LIST_OF_FIRST_NAMES[gender][randomIndexFrom(LIST_OF_FIRST_NAMES[gender])];
+  const lastName = LIST_OF_LAST_NAMES[randomIndexFrom(LIST_OF_LAST_NAMES)];
+
+  if (firstNameOnly) {
+    return firstName;
   }
 
-  get result() {
-    return this._result;
+  if (lastNameOnly) {
+    return lastName;
   }
 
-  /**
-   * Get the randomly generated name.
-   * @return { String }
-   */
-  generateRandomName() {
-    const isFemale = this._gender === 'female';
-    const firstNameOnly = this._type === 'first';
-    const lastNameOnly = this._type === 'last';
+  return `${firstName} ${lastName}`;
+};
 
-    const listOfFirstNames = NAMES_LIST.FIRST_NAMES;
-    const listOfLastNames = NAMES_LIST.LAST_NAMES;
-
-    const firstName =
-      listOfFirstNames['male'][
-        this.randomIndexPositionFrom(listOfFirstNames['male'])
-      ];
-    const lastName =
-      listOfLastNames[this.randomIndexPositionFrom(listOfLastNames)];
-
-    if (firstNameOnly) {
-      return firstName;
-    }
-
-    if (lastNameOnly) {
-      return lastName;
-    }
-
-    return `${firstName} ${lastName}`;
-  }
-
-  randomIndexPositionFrom = list => {
-    return Math.floor(Math.random() * list.length);
-  };
-
-  /**
-   * Verifies the options being passed in, rejecting invalid and only returning
-   * valid arguments.
-   * @param   { Array } [options]
-   * @return  { Object }
-   */
-  validateOptions = options => {
-    // this function needs to identify, filter, and address all possible
-    // errors. It should only return a valid options hash for the rest of
-    // the api to process. After this point, there should not be any errors
-    // as everything being passed has been filtered.
-
-    let acceptedOptions = ['gender', 'salutation'];
-    let object = {};
-
-    // check if an argument is an object
-    options.forEach(function(option) {
-      if (option.constructor === Object) {
-        for (let key in option) {
-          if (acceptedOptions.includes(key.toLowerCase())) {
-            // once the key is verified, check for the key's value
-            // and make sure that it is a valid option as well.
-            object[key] = option[key];
-          } else {
-            // send/log a warning message informing user their
-            // object contains an argument(s) that are not valid?
-          }
-        }
-      } else {
-        // send/log a warning message informing user that they
-        // passed in additional arguments, outside of the options {},
-        // which is not valid, and therefore ignored
-      }
-    });
-
-    return object;
-  };
-}
-
-export default GimmeName;
+export default {
+  name: (type, gender, salutation) => GimmeName(type, gender, salutation)
+};
