@@ -1,4 +1,4 @@
-import GimmeError from '../models/GimmeError';
+import GimmeError from '../functions/error';
 
 export const typeValidator = (data, type) => {
   if (typeof data !== type) {

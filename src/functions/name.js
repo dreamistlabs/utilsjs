@@ -1,4 +1,4 @@
-import GimmeError from './GimmeError';
+import GimmeError from './error';
 import { typeValidator, NAMES_LIST } from '../utils';
 
 // TODO: FEATURES
@@ -23,7 +23,7 @@ const randomIndexFrom = list => {
  * @param {boolean} salutation - Male, female, or custom string.
  */
 
-const GimmeName = (type = 'full', gender = 'male', salutation = false) => {
+const gimmeName = (type = 'full', gender = 'male', salutation = false) => {
   const firstNameOnly = type === 'first';
   const lastNameOnly = type === 'last';
 
@@ -43,5 +43,5 @@ const GimmeName = (type = 'full', gender = 'male', salutation = false) => {
 };
 
 export default {
-  name: (type, gender, salutation) => GimmeName(type, gender, salutation)
+  name: (type, gender, salutation) => gimmeName(type, gender, salutation)
 };
