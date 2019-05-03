@@ -11,18 +11,6 @@ const LIST_OF_LAST_NAMES = NAMES_LIST.LAST_NAMES;
 const TYPE_OPTIONS = ['full', 'first', 'last'];
 const GENDER_OPTIONS = ['male', 'female'];
 
-const randomIndexFrom = list => {
-  return Math.floor(Math.random() * list.length);
-};
-
-/**
- * Creates a new randomly generated name.
- * @class
- * @param {string} type - Full, first, or last name.
- * @param {string} gender - Male or female.
- * @param {boolean} salutation - Male, female, or custom string.
- */
-
 const gimmeName = (type = 'full', gender = 'male', salutation = false) => {
   const firstNameOnly = type === 'first';
   const lastNameOnly = type === 'last';
@@ -41,6 +29,18 @@ const gimmeName = (type = 'full', gender = 'male', salutation = false) => {
 
   return `${firstName} ${lastName}`;
 };
+
+const randomIndexFrom = list => {
+  return Math.floor(Math.random() * list.length);
+};
+
+/**
+ * Creates a new randomly generated name.
+ * @class
+ * @param {string} type - Full, first, or last name.
+ * @param {string} gender - Male or female.
+ * @param {boolean} salutation - Male, female, or custom string.
+ */
 
 export default {
   name: (type, gender, salutation) => gimmeName(type, gender, salutation)

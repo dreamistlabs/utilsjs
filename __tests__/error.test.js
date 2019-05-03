@@ -1,4 +1,4 @@
-import GimmeError from '../src/models/GimmeError';
+import GimmeError from '../src/functions/error';
 
 describe('GimmeError', () => {
   describe('When a new instance is created', function() {
@@ -7,7 +7,9 @@ describe('GimmeError', () => {
     it(`should have ${name} as its name`, function() {
       expect(
         error.name,
-        `The name of the GimmeError instance should be ${name}. But instead it was ${error.name}`
+        `The name of the GimmeError instance should be ${name}. But instead it was ${
+          error.name
+        }`
       ).toBe(name);
     });
     it('should extend from the Error class', function() {
