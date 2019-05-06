@@ -10,10 +10,9 @@ import isoCodes from '../data/countryCodes';
  * @return {string}
  */
 
-const gimmeCurrency = (iso, digits, decimal) => {
+const gimmeCurrency = (iso, digits, decimal = false) => {
   let meta = isoCodes[iso];
   let currency = gimme.number(digits, true, decimal);
-  console.log(currency);
 
   if (meta.symbol_placement === 'prefix') {
     currency = meta.symbol.concat(currency);

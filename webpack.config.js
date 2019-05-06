@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 const libName = 'Gimme';
@@ -12,13 +11,13 @@ const outputPackageBundler = () => {
       mode: devMode ? 'development' : 'production',
       target: outputTarget,
       entry: {
-        gimme: `./src/index.js`,
+        gimme: `./src/index.js`
       },
       output: {
         path: path.resolve(__dirname, `./dist`),
         filename: outputTarget === 'node' ? '[name].node.js' : '[name].js',
         library: libName,
-        libraryTarget: 'umd',
+        libraryTarget: 'umd'
       },
       module: {
         rules: [
@@ -28,24 +27,21 @@ const outputPackageBundler = () => {
             use: {
               loader: 'babel-loader',
               options: {
-                sourceMaps: true,
-              },
-            },
-          },
-        ],
+                sourceMaps: true
+              }
+            }
+          }
+        ]
       },
-      plugins: [
-        new CleanWebpackPlugin(),
-        outputTarget !== 'node' ? new HtmlWebpackPlugin() : () => null,
-      ],
+      plugins: [new CleanWebpackPlugin()],
       optimization: {
-        minimize: devMode ? false : true,
+        minimize: devMode ? false : true
       },
       watchOptions: {
-        ignored: ['node_modules'],
+        ignored: ['node_modules']
       },
       externals: {},
-      devtool: 'source-map',
+      devtool: 'source-map'
     };
   });
 };
