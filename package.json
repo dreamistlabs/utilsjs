@@ -6,18 +6,28 @@
   "author": "Johnny Hu",
   "license": "MIT",
   "main": "./dist/gimme.node.js",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
-    "build": "webpack",
+    "build": "run-p build:*",
+    "build:next": "next build",
+    "build:webpack": "webpack",
     "coveralls": "npm run test:coverage -- --coverageReporters=text-lcov | coveralls",
-    "prepublishOnly": "npm run build",
+    "export": "npm run build:next && next export -o docs && cp .nojekyll docs/",
+    "prepublishOnly": "npm run build:webpack",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
-    "start": "webpack-dev-server --mode development --open",
+    "start": "run-p start:*",
+    "start:dev": "webpack-dev-server --mode development --open",
+    "start:next": "next start",
     "test": "jest --colors --verbose",
     "test:coverage": "jest --coverage",
-    "test:watch": "jest --colors --verbose --watch",
-    "watch": "webpack --watch"
+    "watch": "run-p watch:*",
+    "watch:next": "next dev",
+    "watch:test": "jest --colors --verbose --watch",
+    "watch:webpack": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -62,9 +72,16 @@
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.1.0",
     "jest-expect-message": "^1.0.2",
+    "npm-run-all": "^4.1.5",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "next": "^8.1.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
 }
