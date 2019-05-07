@@ -1,4 +1,4 @@
-import GimmeError from '../src/functions/error';
+import GimmeError from '../src/models/Error';
 import gimme from '../src/functions/number';
 
 const dataTypes = ['number', 'string'];
@@ -28,15 +28,15 @@ describe('GimmeNumber', () => {
   });
 
   it('should throw error when first argument is not a number', () => {
-    expect(function() {
+    expect(() => {
       gimme.number('not a number');
-    }).toThrowError(GimmeError);
+    }).toThrow(Error, /Type Error/i);
   });
 
   it('should throw error when first argument is greater than 20', () => {
-    expect(function() {
+    expect(() => {
       gimme.number(21);
-    }).toThrowError(GimmeError);
+    }).toThrow(GimmeError);
   });
 
   it('should properly format large numbers', () => {

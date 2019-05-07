@@ -1,5 +1,6 @@
-import GimmeError from './error';
-import { typeValidator } from '../utils';
+import GimmeError from '../models/Error';
+import schema from '../schema';
+import { handleTypeErrors } from '../utils';
 
 /**
  * Generate a random number.
@@ -8,22 +9,13 @@ import { typeValidator } from '../utils';
  * @param {boolean} decimal - Include decimal places in number.
  */
 const gimmeNumber = (digits = 1, format = false, decimal = false) => {
-  /**
-   * Validate argument data types.
-   * @param {array} [params]
-   */
+  // Validate argument data types.
   const args = [digits, format, decimal];
-  const [num, bool] = ['number', 'boolean'];
+  handleTypeErrors(args, schema.number);
 
-  typeValidator(args[0], num);
-  typeValidator(args[1], bool);
-  typeValidator(args[2], bool);
-
-  if (args[0] > 20) {
+  if (digits > 20) {
     throw new GimmeError(
-      `Limitation Error! The maximum number of digits that can be safely generated is 20. You entered ${
-        args[0]
-      }. Try a lower number.`
+      `Limitation Error! The maximum number of digits that can be safely generated is 20. You entered ${digits}. Try a lower number.`
     );
   }
 

@@ -1,4 +1,4 @@
-import GimmeError from '../src/functions/error';
+import GimmeError from '../src/models/Error';
 import gimme from '../src/functions/currency';
 import isoCodes from '../src/data/countryCodes';
 

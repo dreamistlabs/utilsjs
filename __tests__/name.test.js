@@ -1,4 +1,4 @@
-import GimmeError from '../src/functions/error';
+import GimmeError from '../src/models/Error';
 import { NAMES_LIST } from '../src/utils';
 import gimme from '../src/functions/name';
 

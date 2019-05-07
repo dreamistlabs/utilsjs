@@ -1,4 +1,4 @@
-import GimmeError from './error';
+import GimmeError from '../models/Error';
 
 /**
  * Generates a random credit card number.
