@@ -19,7 +19,8 @@ export const handleTypeErrors = (argsArray = null, schemaArray = null) => {
           : `Argument must be a ${schemaArg.type}`;
 
       throw new GimmeError(
-        `Type Error! ${dynamicMessage}. You entered "${
+        'Type Error',
+        `${dynamicMessage}. You entered "${
           argsArray[i]
         }" which is a ${typeof argsArray[i]}.`
       );

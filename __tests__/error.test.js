@@ -25,11 +25,12 @@ describe('GimmeError', () => {
     });
 
     describe('with a custom message', function() {
+      const errorType = 'Type Error';
       const customMessage = 'with a custom message!';
-      const error = new GimmeError(customMessage);
+      const error = new GimmeError(errorType, customMessage);
 
       it("should capture the message in the instance's message property", function() {
-        expect(error.message).toBe(customMessage);
+        expect(error.message).toContain(customMessage);
       });
     });
   });
