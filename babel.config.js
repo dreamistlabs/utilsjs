@@ -1,18 +1,8 @@
 module.exports = api => {
   api.cache(true);
 
-  const presets = [
-    'next',
-    [
-      'minify',
-      {
-        builtIns: false,
-        evaluate: false,
-        mangle: false
-      }
-    ]
-  ];
-  const plugins = [];
+  const presets = ['@babel/preset-env'];
+  const plugins = ['@babel/plugin-proposal-class-properties'];
 
   return {
     presets,
