@@ -1,4 +1,4 @@
-import GimmeError from '../src/models/Error';
+import GimmeError from '../src/models/GimmeError';
 import gimme from '../src/functions/number';
 
 const dataTypes = ['number', 'string'];

@@ -1,4 +1,4 @@
-import GimmeError from '../src/models/Error';
+import GimmeError from '../src/models/GimmeError';
 
 describe('GimmeError', () => {
   describe('When a new instance is created', function() {

@@ -1,4 +1,4 @@
-import GimmeError from '../models/Error';
+import GimmeError from '../models/GimmeError';
 import schema from '../schema';
 import { handleTypeErrors } from '../utils';
 
@@ -15,7 +15,8 @@ const gimmeNumber = (digits = 1, format = false, decimal = false) => {
 
   if (digits > 20) {
     throw new GimmeError(
-      `Limitation Error! The maximum number of digits that can be safely generated is 20. You entered ${digits}. Try a lower number.`
+      'Limitation Error',
+      `The maximum number of digits that can be safely generated is 20. You entered ${digits}. Try a lower number.`
     );
   }
 

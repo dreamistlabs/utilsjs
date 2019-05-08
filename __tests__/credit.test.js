@@ -1,5 +1,5 @@
 import gimme from '../src/functions/credit';
-import GimmeError from '../src/models/Error';
+import GimmeError from '../src/models/GimmeError';
 
 /**
  * TODO

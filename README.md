@@ -43,23 +43,52 @@ gimme.number(); // 8
 
 Coming soon...
 
+### #currency( iso, digits, decimal )
+
+Generate a random currency value.
+
+| Parameters/Return     | Data Type | Default Value |
+| --------------------- | --------- | ------------- |
+| @param iso (required) | string    | undefined     |
+| @param digits         | number    | 1 (max: 20)   |
+| @param decimal        | boolean   | false         |
+
+#### Examples
+
+```
+gimme.currency('USD');
+'$5'
+
+gimme.currency('SEK', 6)
+'479,236kr'
+
+gimme.currency('GBP', 4)
+'£5,722'
+
+gimme.currency('GBP', 4, true)
+'£5,090.96'
+
+gimme.currency();
+// Error: The "iso" parameter is required.
+```
+
 ### #name( type, gender, salutation )
 
 Coming soon...
 
-### #number( digits, formatted, decimals )
+### #number( digits, formatted, decimal )
 
 | Parameters/Return | Data Type | Default Value |
 | ----------------- | --------- | ------------- |
 | @param digits     | number    | 1 (max: 20)   |
 | @param formatted  | boolean   | false         |
-| @param decimals   | boolean   | false         |
+| @param decimal    | boolean   | false         |
 
 **Note on @return value**
 If no arguments or only the first argument is provided, then the return value will be a number.
 If the 2nd or 3rd arguments are provided, then the return value will be a string.
 
-### Examples
+#### Examples
 
 ```
 gimme.number();

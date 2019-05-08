@@ -1,4 +1,4 @@
-import GimmeError from '../models/Error';
+import GimmeError from '../models/GimmeError';
 import gimme from './number';
 import schema from '../schema';
 import isoCodes from '../data/countryCodes';
@@ -12,7 +12,7 @@ import { handleTypeErrors, required } from '../utils';
  * @return {string}
  */
 
-const gimmeCurrency = (iso = required(), digits = 1, decimal = false) => {
+const gimmeCurrency = (iso = required('iso'), digits = 1, decimal = false) => {
   const args = [iso, digits, decimal];
   handleTypeErrors(args, schema.currency);
 

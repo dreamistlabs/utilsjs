@@ -1,4 +1,4 @@
-import GimmeError from '../models/Error';
+import GimmeError from '../models/GimmeError';
 import schema from '../schema';
 import { getRandomIndex, handleTypeErrors, NAMES_LIST } from '../utils';
 

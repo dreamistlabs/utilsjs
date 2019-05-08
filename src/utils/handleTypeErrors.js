@@ -1,4 +1,4 @@
-import GimmeError from '../models/error';
+import GimmeError from '../models/GimmeError';
 
 /**
  * @param {array} argsArray -

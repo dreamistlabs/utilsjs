@@ -1,4 +1,4 @@
-import GimmeError from '../models/Error';
+import GimmeError from '../models/GimmeError';
 
 /**
  * Throws a missing parameter error.
@@ -6,8 +6,9 @@ import GimmeError from '../models/Error';
  * should be required.
  * @return {GimmeError}
  */
-export const required = () => {
+export const required = param => {
   throw new GimmeError(
-    'Missing Parameter! You likely forgot to include a required parameter.'
+    'Missing Parameter',
+    `The "${param}" parameter is required.`
   );
 };

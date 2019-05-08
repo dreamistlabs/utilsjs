@@ -22,7 +22,7 @@
     "start": "next start",
     "test": "jest --colors --verbose",
     "test:coverage": "jest --coverage",
-    "watch": "run-p watch:*",
+    "watch": "run-p watch:webpack",
     "watch:next": "next dev",
     "watch:test": "jest --colors --verbose --watch",
     "watch:webpack": "webpack --watch"
