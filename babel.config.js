@@ -2,7 +2,7 @@ module.exports = api => {
   api.cache(true);
 
   const presets = [
-    'next/babel',
+    'next',
     [
       'minify',
       {

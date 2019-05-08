@@ -10,20 +10,15 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "run-p build:*",
-    "build:next": "next build",
-    "build:webpack": "webpack",
+    "build": "webpack",
     "coveralls": "npm run test:coverage -- --coverageReporters=text-lcov | coveralls",
-    "export": "npm run build:next && next export -o docs && cp .nojekyll docs/",
-    "prepublishOnly": "npm run build:webpack",
+    "prepublishOnly": "npm run build",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
-    "start": "next start",
     "test": "jest --colors --verbose",
     "test:coverage": "jest --coverage",
-    "watch": "run-p watch:webpack",
-    "watch:next": "next dev",
+    "watch": "run-p watch:*",
     "watch:test": "jest --colors --verbose --watch",
     "watch:webpack": "webpack --watch"
   },
@@ -64,6 +59,7 @@
     "babel-jest": "^24.1.0",
     "babel-loader": "^8.0.5",
     "babel-preset-minify": "^0.5.0",
+    "babel-preset-next": "^1.2.0",
     "clean-webpack-plugin": "^2.0.1",
     "coveralls": "^3.0.3",
     "eslint": "^5.15.1",
@@ -75,8 +71,6 @@
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
-    "next": "^8.1.0",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
