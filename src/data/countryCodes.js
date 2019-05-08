@@ -9,6 +9,16 @@
 /* Use these variables to assign group and decimal separators */
 const [comma, period, space] = [',', '.', ' '];
 
+const formatOne = {
+  group_separator: comma,
+  decimal_separator: period
+};
+
+const formatTwo = {
+  group_separator: period,
+  decimal_separator: comma
+};
+
 /**
  *  Currency Profile Formatting
  *  iso code: {
@@ -20,33 +30,35 @@ const [comma, period, space] = [',', '.', ' '];
  *  }
  */
 const isoCodes = {
+  BRL: {
+    symbol: 'R$',
+    symbol_placement: 'prefix',
+    currency_name: 'Brazilian Real',
+    ...formatOne
+  },
   USD: {
     symbol: '$',
     symbol_placement: 'prefix',
     currency_name: 'United States dollar',
-    group_separator: comma,
-    decimal_separator: period
+    ...formatOne
   },
   EUR: {
     symbol: '€',
     symbol_placement: 'prefix',
     currency_name: 'Euro',
-    group_separator: comma,
-    decimal_separator: period
+    ...formatOne
   },
   GBP: {
     symbol: '£',
     symbol_placement: 'prefix',
     currency_name: 'British pound',
-    group_separator: comma,
-    decimal_separator: period
+    ...formatOne
   },
   SEK: {
     symbol: 'kr',
     symbol_placement: 'suffix',
     currency_name: 'Swedish krona',
-    group_separator: period,
-    decimal_separator: comma
+    ...formatTwo
   }
 };
 
