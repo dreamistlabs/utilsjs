@@ -40,6 +40,12 @@ const schema = {
       argName: 'decimal',
       type: ['boolean']
     }
+  ],
+  time: [
+    {
+      argName: 'period',
+      type: ['string', 'boolean']
+    }
   ]
 };
 
