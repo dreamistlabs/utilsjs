@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": "./packages/",
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "module": "commonjs",
     "noImplicitAny": true,
