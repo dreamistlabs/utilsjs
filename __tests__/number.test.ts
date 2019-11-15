@@ -1,3 +1,9 @@
+import test from 'ava';
+
+test('foo', (t: any) => {
+  t.pass();
+});
+
 // import 'babel-polyfill';
 
 // import { expect } from 'chai';

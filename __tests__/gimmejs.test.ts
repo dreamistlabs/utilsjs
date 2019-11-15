@@ -1,3 +1,9 @@
+import test from 'ava';
+
+test('my passing test', t => {
+  t.pass();
+});
+
 // 'use strict';
 
 // const expect = require('chai').expect;
