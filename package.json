@@ -19,6 +19,7 @@
     "lerna:test": "lerna run test",
     "test": "ava",
     "test:watch": "ava --watch",
+    "tslint": "tslint -c tslint.json -p tsconfig.json **/*.ts",
     "watch": "webpack --config webpack.config.js -w"
   },
   "husky": {

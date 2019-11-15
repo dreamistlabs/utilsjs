@@ -21,7 +21,7 @@ module.exports = modules.map(function(module) {
         {
           test: /\.ts?$/,
           loader: 'ts-loader',
-          exclude: /node_modules/,
+          exclude: [/node_modules/, /__tests__/],
         },
       ],
     },

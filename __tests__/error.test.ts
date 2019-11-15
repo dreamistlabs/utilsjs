@@ -1,5 +1,5 @@
 import test from 'ava';
-import GimmeError from '../packages/error';
+import GimmeError from '../packages/error/src';
 
 test('foo', (t: any) => {
   t.pass();
