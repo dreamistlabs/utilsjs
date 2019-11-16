@@ -32,6 +32,6 @@ module.exports = modules.map(function(module) {
     optimization: {
       minimize: false,
     },
-    plugins: [new CleanWebpackPlugin(`${modulePath}/dist`)],
+    plugins: [new CleanWebpackPlugin()],
   };
 });
