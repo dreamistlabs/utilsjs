@@ -2,7 +2,8 @@ import test from 'ava';
 import GimmeError from '../packages/error/src';
 
 test('foo', (t: any) => {
-  t.pass();
+  const error = new GimmeError('uh oh');
+  t.is(error.message, 'uh oh');
 });
 
 // describe('GimmeError', function() {
