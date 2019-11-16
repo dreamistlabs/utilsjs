@@ -1,5 +1,6 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 const modules = ['error'] || ['error', 'gimmejs', 'number'];
 
 module.exports = modules.map(function(module) {

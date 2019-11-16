@@ -1,22 +1,29 @@
 {
   "name": "root",
   "private": true,
+  "author": "Johnny Hu <johnny@dreamistlabs.com>",
+  "homepage": "https://github.com/dreamistlabs/gimmejs#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dreamistlabs/gimmejs.git"
   },
-  "author": "Johnny Hu <johnny@dreamistlabs.com>",
   "bugs": {
     "url": "https://github.com/dreamistlabs/gimmejs/issues"
   },
-  "homepage": "https://github.com/dreamistlabs/gimmejs#readme",
   "license": "MIT",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:build": "lerna run build",
     "lerna:test": "lerna run test",
+    "prepublishOnly": "npm run build",
+    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
+    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
     "test": "nyc ava",
     "test:watch": "ava --watch",
     "tslint": "tslint -c tslint.json -p tsconfig.json **/*.ts",
@@ -40,10 +47,11 @@
     "@commitlint/config-conventional": "^8.2.0",
     "ava": "^1.2.1",
     "babel-loader": "^8.0.5",
-    "clean-webpack-plugin": "^1.0.1",
+    "clean-webpack-plugin": "^2.0.1",
     "coveralls": "^3.0.7",
-    "eslint": "^5.14.1",
+    "eslint": "^5.15.1",
     "eslint-config-prettier": "^4.1.0",
+    "generate-changelog": "^1.7.1",
     "husky": "^3.0.9",
     "lerna": "^3.13.0",
     "nyc": "^14.1.1",
@@ -52,11 +60,11 @@
     "tsconfig-paths": "^3.9.0",
     "tslint": "^5.20.1",
     "typescript": "^3.7.2",
-    "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "gimmejs-currency": "^1.0.0",
-    "gimmejs-name": "0.0.2"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }

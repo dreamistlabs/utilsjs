@@ -1,0 +1,20 @@
+# Hidden files
+.*
+
+# Continuous integration config
+.travis.yml
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Development folder
+src/
+
+# Dependency directories
+node_modules/
+
+# Test folder
+tests/
+
+# Documentation Folder
+docs/

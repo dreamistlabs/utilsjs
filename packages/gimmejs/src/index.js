@@ -2,7 +2,7 @@
 
 const gimme = {
   currency: require('gimmejs-currency').currency,
-  name:     require('gimmejs-name').create
+  name: require('gimmejs-name').create,
 };
 
 /**
@@ -12,10 +12,8 @@ const gimme = {
  */
 
 module.exports = (function() {
-
   return {
     currency: gimme.currency,
-    name: gimme.name
-  }
-
+    name: gimme.name,
+  };
 })();

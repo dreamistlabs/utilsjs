@@ -5,5 +5,5 @@ const listOfLastNames = require('./lastNames');
 
 module.exports = {
   firstName: listOfFirstNames,
-  lastName: listOfLastNames
-}
+  lastName: listOfLastNames,
+};

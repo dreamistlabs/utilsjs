@@ -1,0 +1,35 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - stable
+
+branches:
+  only:
+    - master
+    - development
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - npm update
+
+install:
+  - npm install
+
+script:
+  - npm test
+
+notifications:
+  email:
+    recipients:
+      - johnny@dreamistlabs.com
+    on_success: never
+    on_failure: always
+
+# Send coverage data to Coveralls
+after_script:
+  - npm run coveralls
