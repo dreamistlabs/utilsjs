@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "coverage": "nyc --reporter=lcov --reporter=text-summary ava",
+    "test:coverage": "nyc ava && nyc report --reporter=text-lcov",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:build": "lerna run build",
     "lerna:test": "lerna run test",
