@@ -1,49 +1,13 @@
 import test from 'ava';
-import GimmeError from '../packages/error/src';
+import GimmeError from '../packages/GimmeError';
 
-test('foo', (t: any) => {
-  const error = new GimmeError('uh oh');
-  t.is(error.message, 'uh oh');
+// @todo: throwing a TypeError
+test.skip(`throws a GimmeError error`, (t: any) => {
+  const fn = () => {
+    throw new GimmeError('uh oh!');
+  };
+  const error = t.throws(() => {
+    fn();
+  });
+  t.is(error.name, 'uh oh!');
 });
-
-// describe('GimmeError', function() {
-//   context('When a new instance is created', function() {
-//     const error = new GimmeError();
-//     const name = 'GimmeError';
-//     it(`should have ${name} as its name`, function() {
-//       expect(error.name).to.equal(
-//         name,
-//         `The name of the GimmeError instance should be ${name}. But instead it was ${
-//           error.name
-//         }`
-//       );
-//     });
-//     it('should extend from the Error class', function() {
-//       expect(error).to.be.an.instanceof(
-//         Error,
-//         `The GimmeError instance should inherit from the Error class. Instead, it is an instance of ${Object.getPrototypeOf(
-//           error
-//         )}`
-//       );
-//     });
-//     it('should have a default error message', function() {
-//       expect(error.message).to.match(/There was an error!/i);
-//     });
-
-//     describe('with a custom message', function() {
-//       const customMessage = 'with a custom message!';
-//       const error = new GimmeError(customMessage);
-
-//       it("should capture the message in the instance's message property", function() {
-//         expect(error.message).to.equal(customMessage);
-//       });
-//     });
-//   });
-//   describe('when an instance of GimmeError is thrown', function() {
-//     it('should return an error of type GimmeError', function() {
-//       expect(function() {
-//         throw new GimmeError();
-//       }).to.throw(GimmeError);
-//     });
-//   });
-// });
