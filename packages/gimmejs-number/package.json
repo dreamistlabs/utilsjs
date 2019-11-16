@@ -9,8 +9,5 @@
   "bugs": {
     "url": "https://github.com/dreamistlabs/gimmejs/issues"
   },
-  "license": "MIT",
-  "dependencies": {
-    "@gimmejs/error": "^0.0.1"
-  }
+  "license": "MIT"
 }

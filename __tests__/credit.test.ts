@@ -1,61 +1,32 @@
 import test from 'ava';
+import GimmeCredit from '../packages/gimmejs-credit';
 
-test('foo', (t: any) => {
-  t.pass();
+const gimme: GimmeCredit = new GimmeCredit();
+
+test('.credit() -- returns an unformatted, 16-digit cc number', (t: any) => {
+  const regex = /^\d{16}$/;
+  const result = gimme.credit();
+
+  t.regex(result, regex, `output: ${result}`);
 });
 
-// import GimmeCredit from '../src/models/GimmeCredit';
-// import GimmeError from '../src/models/GimmeError';
+test(".credit({ digits: 15, format: 'visa' }) -- returns a formatted, 16-digit cc number", (t: any) => {
+  const regex = /^(\d{4}\s*){4}$/;
+  const result = gimme.credit({ digits: 15, format: 'visa' });
 
-// /**
-//  * TODO
-//  * * Re-generate random number if first 8-digits match actual credit card company numbers.
-//  * * Allow option for users to choose separator when formatting number.
-//  */
-// describe('GimmeCredit', () => {
-//   it('should return a string', () => {
-//     const result = new GimmeCredit().result;
-//     expect(typeof result, `should be type string. Got: ${typeof result}`).toEqual('string');
-//   });
+  t.regex(result, regex, `output: ${result}`);
+});
 
-//   function verifyCheckDigit(number) {
-//     return (
-//       number
-//         .toString()
-//         .split('')
-//         .slice(0, 15)
-//         .map((digit, idx) => (idx % 2 === 0 ? Number(digit) : digit * 2))
-//         .map(digit => (digit > 10 ? digit - 9 : digit))
-//         .reduce((digit, total) => digit + total) % 10
-//     );
-//   }
+test('.verifyCheckSum() -- returns true when check sum is valid', (t: any) => {
+  const result = gimme.credit();
+  const validCheckSum = gimme.verifyCheckSum(result);
 
-//   it('passes the Luhn algorithm test', () => {
-//     const result = new GimmeCredit().result;
-//     let generatedCheckDigit = Number(
-//       result
-//         .toString()
-//         .split('')
-//         .pop()
-//     );
-//     let verifiedCheckDigit = verifyCheckDigit(result);
+  t.assert(validCheckSum);
+});
 
-//     expect(generatedCheckDigit).toEqual(verifiedCheckDigit, `Generated number: ${result}`);
-//   });
+test('.verifyCheckSum() -- returns false when check sum is invalid', (t: any) => {
+  const result = '2345832748593816';
+  const invalidCheckSum = !gimme.verifyCheckSum(result);
 
-//   it('returns a number with spaces between every fourth number', () => {
-//     const result = new GimmeCredit({ format: true }).result;
-//     const creditCardRegex = /^(\d{4}\s){3}\d{4}$/;
-//     expect(result).toMatch(
-//       creditCardRegex,
-//       `Result should match xxxx xxxx xxxx xxxx. Got '${result}' instead.`
-//     );
-//   });
-
-//   it.skip('should throw an exception if the argument passed in is not an object', () => {
-//     let badParameter = () => gimme.credit('not an object');
-//     expect(badParameter, 'A GimmeError should be returned. Instead, got ' + badParameter).toThrow(
-//       GimmeError
-//     );
-//   });
-// });
+  t.assert(invalidCheckSum);
+});

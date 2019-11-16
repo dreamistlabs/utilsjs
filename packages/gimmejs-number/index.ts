@@ -1,11 +1,11 @@
-export interface RandomNumberOptions {
+export interface GimmeNumberOptions {
   length: number;
   formatted?: boolean;
   decimals?: boolean;
 }
 
 class GimmeNumber {
-  public random = (options?: RandomNumberOptions): string => {
+  public number = (options?: GimmeNumberOptions): string => {
     const opts = !options ? { length: 4 } : options;
     const { length, formatted, decimals } = opts;
 

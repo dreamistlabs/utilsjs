@@ -1,5 +1,5 @@
 import test from 'ava';
-import GimmeError from '../packages/GimmeError';
+import GimmeError from '../packages/gimmejs-error';
 
 // @todo: throwing a TypeError
 test.skip(`throws a GimmeError error`, (t: any) => {

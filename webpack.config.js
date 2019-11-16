@@ -1,10 +1,10 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const modules = ['Error'] || ['Error', 'gimmejs', 'Number'];
+const modules = ['error'] || ['error', 'gimmejs', 'number'];
 
 module.exports = modules.map(function(module) {
-  const modulePath = `./packages/Gimme${module}`;
+  const modulePath = `./packages/gimmejs-${module}`;
   return {
     mode: 'production',
     devtool: 'inline-source-map',
