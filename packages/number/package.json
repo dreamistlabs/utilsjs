@@ -1,5 +1,5 @@
 {
-  "name": "@gimmejs/number",
+  "name": "@dreamistlabs/gimmejs-number",
   "version": "0.2.0",
   "description": "Oh, you want a randomly generated number? Just say gimme!",
   "main": "./dist/gimmejs-number.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@gimmejs/error",
+  "name": "@dreamistlabs/gimmejs-error",
   "version": "0.0.1",
   "description": "A simple, custom Error class meant to be used in gimmeJS projects",
   "main": "./dist/gimmejs-error.js",
