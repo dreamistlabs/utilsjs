@@ -1,7 +1,9 @@
 import test from 'ava';
-
+import TestComponent from '../packages/error/src/TestComponent';
 test('my passing test', (t: any) => {
-  t.pass();
+  const Comp = new TestComponent(4, 9);
+  const result = Comp.add();
+  t.pass(result, 13);
 });
 
 // 'use strict';
