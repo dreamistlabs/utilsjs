@@ -63,7 +63,7 @@
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "currency-symbol-map": "^4.0.4",
+    "i18n-iso-countries": "^4.3.1"
   }
 }

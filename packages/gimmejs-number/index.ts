@@ -1,27 +1,28 @@
 export interface GimmeNumberOptions {
-  length: number;
+  digits: number;
   formatted?: boolean;
   decimals?: boolean;
 }
 
 class GimmeNumber {
   public number = (options?: GimmeNumberOptions): string => {
-    const opts = !options ? { length: 4 } : options;
-    const { length, formatted, decimals } = opts;
+    const opts = !options ? { digits: 4 } : options;
+    const { digits, formatted, decimals } = opts;
 
-    if (length > 20) {
+    if (digits > 20) {
       throw new Error(
-        `The maximum number of digits that can be safely generated is 20. You entered ${length}. Try a lower number.`
+        `The maximum number of digits that can be safely generated is 20. You entered ${digits}. Try a lower number.`
       );
     }
 
     let r: number = Math.random();
 
     while (r < 0.1) {
+      /* istanbul ignore next */
       r = Math.random();
     }
 
-    const rand: number = Math.floor(r * Math.pow(10, length));
+    const rand: number = Math.floor(r * Math.pow(10, digits));
     let numStr: string = rand.toString();
 
     if (formatted) {

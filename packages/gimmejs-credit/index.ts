@@ -10,6 +10,7 @@ class GimmeCredit {
 
     let r: number = Math.random();
     while (r < 0.1) {
+      /* istanbul ignore next */
       r = Math.random();
     }
     const rand: string = Math.floor(r * Math.pow(10, digits)).toString();

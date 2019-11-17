@@ -5,9 +5,13 @@
   "rules": {
     "interface-name": false,
     "max-line-length": false,
+    "ordered-imports": false,
     "quotemark": [true, "single", "avoid-escape"],
     "semicolon": [true, "always", "ignore-bound-class-methods"],
-    "trailing-comma": false
+    "trailing-comma": false,
+    "variable-name": {
+      "options": "allow-leading-underscore"
+    }
   },
   "rulesDirectory": []
 }
