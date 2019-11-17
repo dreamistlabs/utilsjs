@@ -1,4 +1,4 @@
-# gimmejs
+# GimmeJS
 
 [![Build Status](https://travis-ci.org/dreamistlabs/gimmejs.svg?branch=master)](https://travis-ci.org/dreamistlabs/gimmejs)
 [![Coverage Status](https://coveralls.io/repos/github/dreamistlabs/gimmejs/badge.svg?branch=master)](https://coveralls.io/github/dreamistlabs/gimmejs?branch=master)
@@ -106,3 +106,6 @@ gimme.number(4, true, true);
 gimme.number(6, false, true);
 475027.74
 ```
+
+[AVA](https://github.com/avajs/ava) - Testing can be a drag!
+[Husky](https://github.com/typicode/husky) - Git hooks made easy!

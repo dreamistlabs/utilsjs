@@ -1,0 +1,9 @@
+{
+  "all": false,
+  "cache": true,
+  "instrument": true,
+  "extension": [".ts", ".js"],
+  "reporter": ["lcov", "text"],
+  "include": ["packages/**", "!packages/**/dist"],
+  "sourceMap": true
+}

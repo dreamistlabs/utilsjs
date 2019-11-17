@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "name": "@dreamistlabs/gimmejs",
+  "description": "A collection of utility methods",
+  "homepage": "https://github.com/dreamistlabs/gimmejs#readme",
+  "main": "./dist/gimmejs.js",
+  "author": "Johnny Hu <johnny@dreamistlabs.com>",
+  "repository": "github:dreamistlabs/gimmejs",
+  "bugs": {
+    "url": "https://github.com/dreamistlabs/gimmejs/issues"
+  },
+  "license": "MIT"
+}

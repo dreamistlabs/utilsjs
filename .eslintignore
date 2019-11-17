@@ -1,3 +1,2 @@
-dist/
-tests/
+**/dist/
 __tests__/

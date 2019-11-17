@@ -1,7 +1,8 @@
 {
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
-  "prettier.eslintIntegration": true,
+  "editor.wordWrapColumn": 120,
+  "editor.wordWrap": "wordWrapColumn",
   "[yaml]": {
     "editor.formatOnSave": false
   }

@@ -1,48 +1,37 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const devMode = process.env.NODE_ENV !== 'production';
-const libName = 'Gimme';
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const outputTargets = ['node', 'web'];
+const modules = ['error'] || ['error', 'gimmejs', 'number'];
 
-const outputPackageBundler = () => {
-  return outputTargets.map(outputTarget => {
-    return {
-      mode: devMode ? 'development' : 'production',
-      target: outputTarget,
-      entry: {
-        gimme: `./src/index.js`
+module.exports = modules.map(function(module) {
+  const modulePath = `./packages/gimmejs-${module}`;
+  return {
+    mode: 'production',
+    devtool: 'inline-source-map',
+    entry: {
+      [module]: `${modulePath}/index.ts`,
+    },
+    output: {
+      path: path.resolve(__dirname, `${modulePath}/dist`),
+      filename: chunkData => {
+        return chunkData.chunk.name === 'gimmejs' ? '[name].js' : 'gimmejs-[name].js';
       },
-      output: {
-        path: path.resolve(__dirname, `./dist`),
-        filename: outputTarget === 'node' ? '[name].node.js' : '[name].js',
-        library: libName,
-        libraryTarget: 'umd'
-      },
-      module: {
-        rules: [
-          {
-            test: /\.js$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-              loader: 'babel-loader',
-              options: {
-                sourceMaps: true
-              }
-            }
-          }
-        ]
-      },
-      plugins: [new CleanWebpackPlugin()],
-      optimization: {
-        minimize: devMode ? false : true
-      },
-      watchOptions: {
-        ignored: ['node_modules']
-      },
-      externals: {},
-      devtool: 'source-map'
-    };
-  });
-};
-module.exports = outputPackageBundler();
+    },
+    module: {
+      rules: [
+        {
+          test: /\.ts?$/,
+          loader: 'ts-loader',
+          exclude: [/node_modules/, /__tests__/],
+        },
+      ],
+    },
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js'],
+    },
+    optimization: {
+      minimize: false,
+    },
+    plugins: [new CleanWebpackPlugin()],
+  };
+});

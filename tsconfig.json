@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "outDir": "dist/",
+    "sourceMap": true,
+    "target": "es6"
+  },
+  "include": ["./packages/**/*", "./typings/index.d.ts"]
+}

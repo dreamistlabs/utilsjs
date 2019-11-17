@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "name": "@dreamistlabs/gimmejs-currency",
+  "description": "Oh, you want a randomly generated currency? Just say gimme!",
+  "homepage": "https://github.com/dreamistlabs/gimmejs#readme",
+  "main": "./dist/gimmejs-currency.js",
+  "author": "Johnny Hu <johnny@dreamistlabs.com>",
+  "repository": "github:dreamistlabs/gimmejs",
+  "bugs": {
+    "url": "https://github.com/dreamistlabs/gimmejs/issues"
+  },
+  "license": "MIT"
+}

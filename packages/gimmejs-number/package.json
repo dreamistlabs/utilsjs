@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "name": "@dreamistlabs/gimmejs-number",
+  "description": "Oh, you want a randomly generated number? Just say gimme!",
+  "homepage": "https://github.com/dreamistlabs/gimmejs#readme",
+  "main": "./dist/gimmejs-number.js",
+  "author": "Johnny Hu <johnny@dreamistlabs.com>",
+  "repository": "github:dreamistlabs/gimmejs",
+  "bugs": {
+    "url": "https://github.com/dreamistlabs/gimmejs/issues"
+  },
+  "license": "MIT"
+}

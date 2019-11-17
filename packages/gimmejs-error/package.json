@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "name": "@dreamistlabs/gimmejs-error",
+  "description": "A simple, custom Error class meant to be used in gimmeJS projects",
+  "homepage": "https://github.com/dreamistlabs/gimmejs#readme",
+  "main": "./dist/gimmejs-error.js",
+  "author": "Johnny Hu <johnny@dreamistlabs.com>",
+  "repository": "github:dreamistlabs/gimmejs",
+  "bugs": {
+    "url": "https://github.com/dreamistlabs/gimmejs/issues"
+  },
+  "license": "MIT"
+}
