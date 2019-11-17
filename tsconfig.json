@@ -5,7 +5,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "module": "commonjs",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "outDir": "dist/",
     "sourceMap": true,
     "target": "es6"
