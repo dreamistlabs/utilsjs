@@ -4,6 +4,6 @@
   "instrument": true,
   "extension": [".ts", ".js"],
   "reporter": ["lcov", "text"],
-  "include": ["packages/**", "!packages/**/dist"],
+  "exclude": ["node_modules", "packages/**/dist"],
   "sourceMap": true
 }
