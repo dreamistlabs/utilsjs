@@ -2,11 +2,14 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.tslint": true
   },
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.tabSize": 2,
   "editor.wordWrapColumn": 120,
   "editor.wordWrap": "wordWrapColumn",
-  "[javascript]": {
-    "editor.formatOnSave": true
+  "[typescript]": {
+    "editor.formatOnSave": false
   },
+  "[yaml]": {
+    "editor.formatOnSave": false
+  }
 }

@@ -10,6 +10,6 @@
     "sourceMap": true,
     "target": "es6"
   },
-  "include": ["./packages/**/*", "./typings/index.d.ts"],
+  "include": ["__tests__/**/*", "./packages/**/*", "./typings/index.d.ts"],
   "exclude": ["./packages/**/dist/*"]
 }

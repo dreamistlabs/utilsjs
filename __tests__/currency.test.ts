@@ -19,7 +19,11 @@ test(".currency({ code: 'GBP', digits: 4 }) -- returns the correct currency symb
 
 test(".currency({ code: 'GBP', digits: 4, symbolPosition: 'append' }) -- appends currency symbol after value", (t: any) => {
   const symbol = '£';
-  const result = gimme.currency({ code: 'GBP', digits: 4, symbolPosition: 'append' });
+  const result = gimme.currency({
+    code: 'GBP',
+    digits: 4,
+    symbolPosition: 'append',
+  });
 
   t.assert(result.endsWith(symbol), `output: ${result}`);
 });
