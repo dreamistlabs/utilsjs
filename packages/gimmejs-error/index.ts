@@ -1,5 +1,7 @@
+const defaultMsg = 'Uh Oh! There was an error! Please review the stacktrace';
+
 class GimmeError extends Error {
-  constructor(message: string = 'Uh Oh! There was an error! Please review the stacktrace') {
+  constructor(message: string = defaultMsg) {
     super(message);
     this.name = 'GimmeError';
   }

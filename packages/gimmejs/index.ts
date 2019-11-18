@@ -11,7 +11,7 @@ const gimme = {
  * Include @return {type}
  */
 
-module.exports = (function() {
+module.exports = (() => {
   return {
     currency: gimme.currency,
     name: gimme.name,

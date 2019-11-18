@@ -1,9 +1,12 @@
 {
-  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true
+  },
+  "editor.formatOnSave": false,
   "editor.tabSize": 2,
   "editor.wordWrapColumn": 120,
   "editor.wordWrap": "wordWrapColumn",
-  "[yaml]": {
-    "editor.formatOnSave": false
-  }
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
 }

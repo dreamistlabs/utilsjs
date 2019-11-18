@@ -1,10 +1,12 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const modules = ['error'] || ['error', 'gimmejs', 'number'];
+const modules = ['credit', 'currency', 'error', 'number'];
 
 module.exports = modules.map(function(module) {
-  const modulePath = `./packages/gimmejs-${module}`;
+  const modulePath = module === 'gimmejs' ? './packages/gimmejs' : `./packages/gimmejs-${module}`;
+  const library = module === 'gimmejs' ? 'Gimme' : `Gimme${module.toUpperCase()}`;
+
   return {
     mode: 'production',
     devtool: 'inline-source-map',
@@ -16,6 +18,9 @@ module.exports = modules.map(function(module) {
       filename: chunkData => {
         return chunkData.chunk.name === 'gimmejs' ? '[name].js' : 'gimmejs-[name].js';
       },
+      libraryExport: 'default',
+      libraryTarget: 'umd',
+      globalObject: "typeof self !== 'undefined' ? self : this",
     },
     module: {
       rules: [

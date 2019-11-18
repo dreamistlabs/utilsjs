@@ -18,7 +18,8 @@ class GimmeCurrency {
     const symbol = getCurrencySymbol(code);
     const value = this._gimme.number({ digits, formatted: true, decimals });
 
-    const currency = symbolPosition === 'append' ? value.concat(symbol) : symbol.concat(value);
+    const currency =
+      symbolPosition === 'append' ? value.concat(symbol) : symbol.concat(value);
 
     return currency;
   };

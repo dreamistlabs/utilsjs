@@ -25,7 +25,9 @@ class GimmeCredit {
       case 'visa':
         return credit
           .split('')
-          .map((char, idx) => ((idx + 1) % 4 === 0 && idx !== digits ? `${char} ` : char))
+          .map((char, idx) => {
+            return (idx + 1) % 4 === 0 && idx !== digits ? `${char} ` : char;
+          })
           .join('');
       default:
         break;
